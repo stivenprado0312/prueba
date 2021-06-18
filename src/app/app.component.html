@@ -1,0 +1,16 @@
+
+<div class="container" style="background-color: #151b1f;">
+  <h1 class="mt-3 text-center animate__animated animate__bounce slower" font-face="Comic Sans Ms" style="color: rgba(255, 255, 255, 0.616);"> Personajes Marvel </h1>
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+    <div class="col" *ngFor="let character of listHeroes">
+      <div class="card animate__bounceIn">
+        <img src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}" style="height: 270px;">
+        <div class="card-body">
+          <h5 class="card-title" style="width: 270px; height: 30px;" > {{ character.name }}</h5>
+          <output class="card-text" style="width: 270px;height: 30px;" [value] = "recorrerSerie(character)"></output>   
+          <a class="btn btn-primary btn-lg"  href="{{ character.urls[0].url}}"role="button" style="width: 230px ;">Detalles</a>      
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
